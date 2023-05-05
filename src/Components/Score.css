@@ -1,0 +1,35 @@
+#ButtonDiv {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    display: inline-flex;
+    left: 0%;
+}
+
+#ScoreDiv {
+    width: 20%;
+    height: 80px;
+    background-color: white;
+    background-color: #CF7336;
+    align-items: center;
+}
+
+#ScoreText {
+    font-family: tf2;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.MapButton {
+    width: 20%;
+    height: 80px;
+    margin: 0 auto;
+    font-family: 'tf2-build';
+    background-color: rgb(150, 60, 0);
+    color: white;
+    border-radius: 0px;
+}
+
+.MapButton:hover {
+    background-color: #CF7336;
+}
