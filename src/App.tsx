@@ -5,6 +5,7 @@ import WelcomeCard from './Components/WelcomeCard';
 import Score from './Components/Score';
 
 const img = "https://cdn.wallpapersafari.com/1/86/EYVIlD.jpg"
+const maps: Array<string> = ["1", "2", "3", "4"];
 
 function App() {
     const [active, setActive] = React.useState(false);
@@ -32,7 +33,7 @@ function App() {
             </div>
 
             <div>
-                <Score clickFunction={printer} active={active} score={score} />
+                <Score clickFunction={printer} active={active} score={score} maps={maps}/>
             </div>
         </div>
     );
