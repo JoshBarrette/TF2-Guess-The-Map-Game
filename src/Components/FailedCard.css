@@ -1,11 +1,11 @@
 @import url('../Fonts/tf2build.css');
 @import url('../Fonts/tf2.css');
 
-#WelcomeContainer {
+#FailedContainer {
     background-color: #0b0b0b;
     border-radius: 5px;
     width: 800px;
-    height: 185px;
+    height: 165px;
     z-index: 1;
 }
 

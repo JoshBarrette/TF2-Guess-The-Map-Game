@@ -12,10 +12,11 @@
     background-color: #1a1c1d;
 }
 
-#WelcomeDiv {
+.PopUp {
     position: absolute;
     display: inline-flex;
     top: 25%;
+    z-index: 1;
 }
 
 #ImageDiv {
