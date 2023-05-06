@@ -7,9 +7,7 @@
     width: 800px;
     height: 185px;
     z-index: 1;
-    /* animation: fadeInAnimation ease 1.5s; */
 }
-
 
 p { 
     font-family: "tf2-build";

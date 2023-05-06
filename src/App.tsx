@@ -5,12 +5,12 @@ import WelcomeCard from './Components/WelcomeCard';
 import Score from './Components/Score';
 
 const img = "https://cdn.wallpapersafari.com/1/86/EYVIlD.jpg"
-const maps: Array<string> = ["1", "2", "3", "4"];
+const maps: Array<string> = ["upward", "badwater", "goldrush", "thunder mountain"];
 
 function App() {
     const [active, setActive] = React.useState(false);
     const [score, setScore] = React.useState(0);
-    const [answer, setAnswer] = React.useState<number>();
+    const [answer, setAnswer] = React.useState<number>(2);
     
     const printer = (guessNumber: number) => {
         console.log(guessNumber);
