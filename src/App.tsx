@@ -4,20 +4,29 @@ import './App.css';
 import WelcomeCard from './Components/WelcomeCard';
 import FailedCard from './Components/FailedCard';
 import Score from './Components/Score';
+import questionData from './Questions.json';
 
-const img = "https://cdn.wallpapersafari.com/1/86/EYVIlD.jpg"
-const maps: Array<string> = ["Upward", "Badwater", "Goldrush", "Thunder Mountain"];
+import path from 'path';
+
+type question = {
+    image : string,
+    map : string,
+    maps: Array<string>,
+    answer: number
+}
+
+const img = "2fort1.jpg"
+const questions: Array<question> = questionData.questions;
 
 function App() {
     const [welcome, setWelcome] = React.useState(true);
     const [active, setActive] = React.useState(false);
     const [score, setScore] = React.useState(0);
-    const [answer, setAnswer] = React.useState<number>(1);
-    const [image, setImage] = React.useState(img);
+    const [q, setQ] = React.useState(questions[0])
     const [failed, setFailed] = React.useState(false);
 
     const checkAnswer = (guessNumber: number) => {
-        if (guessNumber === answer) {
+        if (guessNumber === q.answer) {
             setScore(score + 1);
         } else {
             setActive(false);
@@ -27,24 +36,23 @@ function App() {
 
     return (
         <div className="App">
-            {welcome ? 
+            {welcome && 
             <div className="PopUp">
                 <WelcomeCard clickFunction={() => {setWelcome(false); setActive(true)}}/>
-            </div> 
-            : null}
+            </div> }
 
-            {failed ? 
+            {failed && 
             <div className="PopUp">
                 <FailedCard clickFunction={() => {setFailed(false); setActive(true); setScore(0);}} score={score}/>
-            </div> 
-            : null}
+            </div> }
             
+            {/* TODO: This method of pointing to images with require feels like it's wrong but idk man */}
             <div id="ImageDiv">
-                <img src={image} />
+                <img src={require("./Assets/" + img)} alt={"Map Image Here."}/>
             </div>
 
             <div>
-                <Score clickFunction={checkAnswer} active={active} score={score} maps={maps}/>
+                <Score clickFunction={checkAnswer} active={active} score={score} maps={q.maps}/>
             </div>
         </div>
     );
